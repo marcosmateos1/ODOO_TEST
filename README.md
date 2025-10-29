@@ -68,7 +68,7 @@ Este archivo le dice a Render cómo construir la aplicación Odoo.
 
 
 
-Dockerfile
+Codigo Dockerfile:
 
 # Imagen base Odoo 17 (oficial)
 FROM odoo:17
@@ -183,3 +183,4 @@ Instálalo.
 
 Autor: Marcos Mateos Iglesias
 Ayuda de ChatGPT para el decoramiento de emojis del Readme, TODAS LAS IDEAS FUERON PROPIAS DEL AUTOR. Gracias por leer :D .
+
