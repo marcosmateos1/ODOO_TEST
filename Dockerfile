@@ -10,10 +10,6 @@ EXPOSE 8069
 # Puerto por defecto de PostgreSQL
 ENV PGPORT=5432
 
-# Render asigna automáticamente el puerto en $PORT,
-# así que usamos 8069 por defecto si no está definido.
-ENV PORT=${PORT:-8069}
-
 # 1) Inicializa la BD indicada en $PGDATABASE si está vacía (stop-after-init)
 # 2) Después arranca el servidor normalmente
 #
@@ -26,10 +22,9 @@ CMD ["bash","-lc", "\
        --db_user=$PGUSER --db_password=$PGPASSWORD \
        --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
        --stop-after-init || true; \
-  echo '==> Starting Odoo server on port $PORT' && \
+  echo '==> Starting Odoo server' && \
   odoo --db_host=$PGHOST --db_port=$PGPORT \
        --db_user=$PGUSER --db_password=$PGPASSWORD \
        --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
        --db-filter=$PGDATABASE \
-       --http-port=$PORT \
-       --limit-time-real=100000"]
+       --dev=all"]
