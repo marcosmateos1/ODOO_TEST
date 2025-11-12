@@ -27,4 +27,4 @@ CMD ["bash","-lc", "\
        --db_user=$PGUSER --db_password=$PGPASSWORD \
        --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
        --db-filter=$PGDATABASE \
-       --dev=all"]
+       --http-port=${PORT:-8069}"]
