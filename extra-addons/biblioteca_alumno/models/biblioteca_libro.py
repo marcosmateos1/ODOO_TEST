@@ -5,6 +5,6 @@ class BibliotecaLibro(models.Model):
     _description = 'Libro de la biblioteca'
 
     name = fields.Char(string='Título', required=True)
-    autor = fields.Char(string='Autor')
+    autor = fields.Char(string='Autor', default='Marcos')
     fecha = fields.Date(string='Fecha de publicación')
 
